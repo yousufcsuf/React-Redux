@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
     case ORDER_PIZZA:
       return {
         ...state, //copying the initialState so that we donot lose the value
-        pizzaBase: pizzaBase - 1,
+        pizzaBase: state.pizzaBase - 1,
       };
     default:
       return state;
@@ -49,7 +49,13 @@ const store = createStore(reducer);
 console.log("Initial State:", store.getState());
 
 //3. Registers listeners via subscribe(listener)
-// IT GETS EXECUTED ANYTIME THE STATE IN THE REDUX STORE CHANGES
+// IT GETS EXECUTED ANYTIME THE STATE IN THE REDUX STORE CHANGES & IF ANY ACTION IS DISPATCHED
 store.subscribe(() => {
   console.log("subscribe");
+  console.log("updated State:", store.getState());
 });
+
+//4. Allows state to be updated via dispatch(action)
+store.dispatch(orderPizza());
+store.dispatch(orderPizza());
+store.dispatch(orderPizza());
