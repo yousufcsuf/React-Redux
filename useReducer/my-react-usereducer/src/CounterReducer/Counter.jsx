@@ -21,8 +21,8 @@ const Counter = () => {
   //const [count, setCount] = useState(0);
   console.log("useReducer()");
   //USE REDUCER
-  // --> ARRAY(0)
-  // --> Array f()
+  // ---> ARRAY(0)
+  // ---> Array f()
   //console.log(useReducer());
   const [count, dispatch] = useReducer(reducer, initial);
 

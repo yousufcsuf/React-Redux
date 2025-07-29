@@ -1,0 +1,5 @@
+useReducer is a react hook, that allows you to manage the states of components
+
+useState vs useReducer
+
+useReducer helps to reduce the handler methods

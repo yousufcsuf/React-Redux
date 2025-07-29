@@ -14,7 +14,7 @@ function reducer(state, action) {
     case "decrement":
       return { counter: state.counter - action.payload };
     case "reset":
-      return { counter: 0 };
+      return { ...state, counter: 0 };
     default:
       return state;
   }
